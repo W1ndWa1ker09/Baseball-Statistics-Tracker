@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang = "en-us">
+
+<head>
+	<meta charset = "UTF-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+	<title> Ultimate Baseball | Velocity Training </title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="top">
+		<div class="centered">
+			<a href="home.html"> <h3> Ultimate Baseball </h3> </a>
+			<div class="pages">
+				<h4 id="view_head" class="heading"> View </h4>
+				<h4 id="edit_head" class="heading"> Edit </h4>
+				<h4 id="settings_head" class="heading"> Saves </h4>
+			</div>
+			<div class="button_wrapper">
+				Autosave: 
+				<button id="autosave_btn" class="toggle off"> OFF </button>
+				<button id="save_btn" class="toggle on"> &#x1F4BE; </button>
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="sub_div" id="view">
+			<div>
+				<div class="tbl_setting">
+					<label for="session_select_in"> Type: </label>
+					<select id="session_select_in">
+						<option value="All"> All Types </option>
+						<option value="Pitching"> Pitching </option>
+						<option value="Hitting"> Hitting </option>
+						<option value="Swinging"> Swinging </option>
+					</select>
+				</div>
+				<div class="tbl_setting">
+					<label for="days_btn"> Last <input type="number" value="10" min="1" id="days_in"> Days Mode: </label>
+					<button class="toggle off" id="days_btn"> OFF </button>
+				</div>
+				<div class="tbl_setting">
+					<label for="group_btn"> Group Sessions by Date: </label>
+					<button class="toggle on" id="group_btn"> ON </button>
+				</div>
+
+				<div class="view_tbl">
+					<table id="session_tbl">
+						<colgroup>
+							<col class="first">
+							<col> <col> <col> <col> <col> <col> <col> <col> <col>
+						</colgroup>
+						<tr id="head_tr">
+							<th> </th>
+							<th> <button class="tbl_head_btn" name="date"> Date </button> </th>
+							<th> Type </th>
+							<th> <button class="tbl_head_btn" name="totals"> Total Values </button> </th>
+							<th> <button class="tbl_head_btn" name="max"> Maximum </button> </th>
+							<th> <button class="tbl_head_btn" name="min"> Minimum </button> </th>
+							<th> <button class="tbl_head_btn" name="avg"> Average </button> </th>
+							<th> <button class="tbl_head_btn" name="eighth_avg"> Top 8th Average </button> </th>
+							<th> <button class="tbl_head_btn" name="median"> Median </button> </th>
+							<th> <button class="tbl_head_btn" name="std_dev"> Standard Deviation </button> </th>
+						</tr>
+						<tr class="total_tr">
+							<td> Total </td>
+							<td> 0 Days </td>
+							<td> All </td>
+							<td> 0 </td>
+							<td> 0mph </td>
+							<td> 0mph </td>
+							<td> 0mph </td>
+							<td> 0mph </td>
+							<td> 0mph </td>
+							<td> 0mph </td>
+						</tr>
+						<tr>
+							<td> 1 </td>
+							<td> N/A </td>
+							<td> N/A </td>
+							<td> N/A </td>
+							<td> N/A </td>
+							<td> N/A </td>
+							<td> N/A </td>
+							<td> N/A </td>
+							<td> N/A </td>
+							<td> N/A </td>
+						</tr>
+					</table>
+				</div>
+				<br>
+			</div>
+			<div>
+				<div id="chart_div">
+					<canvas id="chart" width="1000" height="300"></canvas>
+					<div id="chart_message"> No data to display </div>
+				</div>
+				<br>
+				<div>
+					<label for="chart_in"> Metric: </label>
+					<select id="chart_in">
+						<option value="Average"> Average </option>
+						<option value="Top 8th Average"> Top 8th Avg </option>
+						<option value="Median"> Median </option>
+						<option value="Standard Deviation"> Standard Deviation </option>
+						<option value="Maximum"> Max </option>
+						<option value="Minimum"> Min </option>
+						<option value="Total Values"> Total </option>
+					</select>
+					<br>
+				</div>
+			</div>
+		</div>
+		<div class="sub_div" id="edit">
+			<h3> Create Sessions </h3>
+			<div id="session_create_div">
+				<label for="session_date_in"> Date: </label>
+				<input id="session_date_in" type="date">
+				<label for="session_type_in"> Type: </label>
+				<select id="session_type_in">
+					<option value="Pitching"> Pitching </option>
+					<option value="Hitting"> Hitting </option>
+					<option value="Swinging"> Swinging </option>
+				</select>
+				<button id="session_submit_btn"> Submit </button> 
+			</div>
+			<div id="velo_add_div">
+				<h4 id="velo_head"> Add Pitches for Session </h4>
+				<button id="velo_add_btn"> Add Pitch </button>
+				<button id="velo_remove_btn"> Remove All </button>
+				<br>
+				<br>
+				<div id="velo_div"> </div>
+				<br>
+				<button id="velo_submit_btn"> Submit Session </button>
+				<button id="velo_cancel_btn"> Cancel Session </button>
+			</div>
+
+			<h3> Delete Sessions </h3>
+			<div class="view_tbl">
+				<table id="delete_tbl">
+					<colgroup>
+						<col class="first">
+						<col> <col> <col> <col> <col> <col> <col>
+					</colgroup>
+					<tr id="head_tr">
+						<th> <p> </p> </th>
+						<th> <p> Date </p> </th>
+						<th> <p> Type </p> </th>
+						<th> <p> Total Values </p> </th>
+						<th> <p> Max </p> </th>
+						<th> <p> Min </p> </th>
+						<th> <p> Avg </p> </th>
+						<th> </th>
+					</tr>
+					<tr>
+						<td> 1 </td>
+						<td> N/A </td>
+						<td> N/A </td>
+						<td> N/A </td>
+						<td> N/A </td>
+						<td> N/A </td>
+						<td> N/A </td>
+						<td> <button> X </button> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="sub_div" id="settings">
+			<label for="data_in"> Uploaded Session Data: </label>
+			<input type="file" id="data_in">
+			<button id="data_reset_btn"> Reset </button>
+			<br>
+			<button id="data_btn"> Download Session Data </button>
+		</div>
+	</div>
+	<div class="alert">
+		<div>
+			<p id="alert_p"></p>
+			<button id="alert_btn"> OK </button>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="universal.js" async></script>
+	<script src="velocity.js" async> </script>
+</body>
+</html>

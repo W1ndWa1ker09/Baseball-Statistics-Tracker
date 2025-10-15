@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang = "en-us">
+
+<head>
+	<meta charset = "UTF-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+	<title> Ultimate Baseball | In-Game Batting </title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="top">
+		<div class="centered">
+			<a href="home.html"> <h3> Ultimate Baseball </h3> </a>
+			<div class="pages">
+				<h4 id="view_head" class="heading"> View </h4>
+				<h4 id="edit_head" class="heading"> Edit </h4>
+				<h4 id="settings_head" class="heading"> Saves </h4>
+			</div>
+			<div class="button_wrapper">
+				Autosave: 
+				<button id="autosave_btn" class="toggle off"> OFF </button>
+				<button id="save_btn" class="toggle on"> &#x1F4BE; </button>
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="sub_div" id="view">
+            <table class="batting_view_tbl">
+                <colgroup>
+                    <col> <col> <col class="end">
+                    <col> <col class="end"> 
+                    <col> <col> <col> <col class="end"> 
+                    <col> <col> <col class="end"> 
+                    <col> <col> 
+                </colgroup>
+                <tr>
+                    <th> PA </th> <th> AB </th> <th> H </th>
+                    <th> R </th> <th> RBI </th>
+                    <th> 1B </th> <th> 2B </th> <th> 3B </th> <th> HR </th>
+                    <th> SO </th> <th> BB </th> <th> HBP </th>
+                    <th> SB </th> <th> CS </th>
+                </tr>
+                <tr>
+                    <td class="td pa"> 0 </td> <td class="td ab"> 0 </td> <td class="td h"> 0 </td>
+                    <td class="td r"> 0 </td> <td class="td rbi"> 0 </td>
+                    <td class="td s"> 0 </td> <td class="td d"> 0 </td> <td class="td t"> 0 </td> <td class="td hr"> 0 </td>
+                    <td class="td so"> 0 </td> <td class="td bb"> 0 </td> <td class="td hbp"> 0 </td>
+                    <td class="td sb"> 0 </td> <td class="td cs"> 0 </td>
+                </tr>
+            </table>
+            
+            <h3> Stats </h3>
+            <table class="batting_view_tbl">
+                <tr>
+                    <th> AVG </th>
+                    <th> OBP </th>
+                    <th> SLG </th>
+                    <th> OPS </th>
+                </tr>
+                <tr>
+                    <td class="td avg float"> 
+                        0
+                        <div class="tooltip">
+
+                        </div>
+                    </td>
+                    <td class="td obp float"> 0 </td>
+                    <td class="td slg float"> 0 </td>
+                    <td class="td ops float"> 0 </td>
+                </tr>
+            </table>
+
+            <h3> Advanced Stats </h3>
+            <table class="batting_view_tbl">
+                <colgroup>
+                    <col> <col class="end">
+                    <col> <col class="end"> 
+                    <col> <col>
+
+                </colgroup>
+                <tr>
+                    <th> TB </th> <th> XBH </th>
+                    <th> SO% </th> <th> BB% </th>
+                    <th> BABIP </th>  <th> SB% </th>
+                </tr>
+                <tr>
+                    <td class="td tb"> 0 </td> <td class="td xbh"> 0 </td>
+                    <td class="td soper"> 0 </td> <td class="td bbper"> 0 </td>
+                    <td class="td babip float"> 0 </td> <td class="td sbper"> 0 </td>
+                </tr>
+            </table>
+		</div>
+		<div class="sub_div" id="edit">
+            <h3> Add Games </h3>
+            <label for="pa_counter_in"> Plate Appearances: </label>
+            <input id="pa_counter_in" type="number" min="1" value="1">
+            <select id="pa_switch_select"> 
+                <option value="0"> Plate Appearance 1 </option>
+            </select>
+            <hr class="short">
+            <label for="pa_result_select"> Result: </label>
+            <select id="pa_result_select">
+                <option value="s"> Single (1B) </option>
+                <option value="d"> Double (2B) </option>
+                <option value="t"> Triple (3B) </option>
+                <option value="hr"> Home Run (HR) </option>
+                <option value="bb"> Walk (BB) </option>
+                <option value="hbp"> Hit by Pitch (HBP) </option>
+                <option value="roe"> Reached on Error (ROE) </option>
+                <option value="fc"> Fielder's Choice (FC) </option>
+                <option value="so"> Strikeout (SO) </option>
+                <option value="fo"> Flyout (FO) </option>
+                <option value="go"> Groundout (GO) </option>
+                <option value="r"> Run (R) </option>
+                <option value="rbi"> Runs Batted In (RBI) </option>
+                <option value="sb"> Stolen Base (SB) </option>
+                <option value="cs"> Caught Stealing (CS) </option>
+            </select>
+            <br>
+            <label for="pa_pitches_in"> # of pitches: </label>
+            <input id="pa_pitches_in" type="number" min="1" value="1">
+            <br>
+            <label for="pa_pitch_type_select"> Ending pitch type: </label>
+            <select id="pa_pitch_type_select">
+                <option id="0"> Fastball </option>
+                <option id="1"> Breaking Ball </option>
+                <option id="2"> Offspeed </option>
+            </select>
+            <hr class="short">
+            <button id="game_submit_btn"> Submit </button>
+            
+            <h3> Remove Games </h3>
+		</div>
+		<div class="sub_div" id="settings">
+			<label for="data_in"> Uploaded Session Data: </label>
+			<input type="file" id="data_in">
+			<button id="data_reset_btn"> Reset </button>
+			<br>
+			<button id="data_btn"> Download Session Data </button>
+		</div>
+	</div>
+	<div class="alert">
+		<div>
+			<p id="alert_p"></p>
+			<button id="alert_btn"> OK </button>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="universal.js" async></script>
+	<script src="batting.js" async> </script>
+</body>
+</html>

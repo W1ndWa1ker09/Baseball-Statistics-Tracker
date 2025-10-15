@@ -1,0 +1,330 @@
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(198, 239, 255);
+}
+
+hr {
+    border: 1px solid  rgb(0, 183, 255);
+    border-radius: 6px;
+}
+.short {
+    width: 150px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+button, input, select {
+    cursor: pointer;
+    background: rgb(183, 234, 255);
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 6px;
+    height: 30px;
+    padding: 5px;
+    margin: 5px;
+}
+
+button {
+    width: auto;
+}
+.toggle.on{
+    background: rgb(0, 255, 0);
+}
+.toggle.off {
+    background: rgb(255, 0, 0);
+}
+
+input[type="date"] {
+    height: auto;
+}
+input[type="file"] {
+    height: auto;
+    width: 130px;
+}
+input[type="file"]::file-selector-button {
+    display: none;
+}
+input[type="number"] {
+    text-align: center;
+    width: 40px;
+    height: auto;
+}
+
+canvas {
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 6px;
+}
+
+#session_select_in {
+    text-align: center;
+}
+
+#days_in {
+    height: 15px;
+}
+
+table {
+    margin: 0 auto;
+    text-align: center;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: auto;
+    }
+    .view_tbl th {
+        padding-right: 10px;
+        padding-left: 10px;
+        position: sticky;
+        top: 0;
+        background: rgb(198, 239, 255);
+        z-index: 1;
+        margin: 10px;
+    }
+    #head_tr, .tbl_head_btn {
+        font-size: 13px;
+        font-weight: bold;
+        color: rgb(128, 128, 128);
+    }
+    #delete_tbl #head_tr {
+        border-bottom: 3px solid rgb(128, 128, 128);
+    }
+    .tbl_head_btn {
+        height: auto;
+        width: auto;
+        background: none;
+        border: none;
+    }
+    .view_tbl td {
+        padding: 7px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    tr:not(:last-child) {
+        border-bottom: 1px solid rgb(128, 128, 128);
+    }
+    .view_tbl tr.first {
+        border-bottom: none;
+    }
+    col:not(:last-child) {
+        border-right: 1px solid rgb(128, 128, 128);
+    }
+    .view_tbl col.first {
+        border-right: 2px solid rgb(128, 128, 128);
+    }
+    .total_tr td {
+        border-bottom: 3px solid rgb(128, 128, 128);
+        font-size: 16px;
+    }
+    .view_tbl {
+        position: relative;
+        border: 1px solid rgb(128, 128, 128);
+        border-radius: 6px;
+        max-height: 200px;
+        max-width: 1000px;
+        margin: 0 auto;
+        overflow-y: auto;
+    }
+    .view_tbl tr p {
+        margin: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .view_tbl tr:hover {
+        background: rgba(0, 0, 255, 0.3);
+    }
+
+    .batting_view_tbl th {
+        font-weight: bold;
+    }
+    .batting_view_tbl th, td{ 
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 15px;
+    }
+    .batting_view_tbl col {
+        border: none;
+    }
+    .batting_view_tbl col.end {
+        border-right: 1px solid rgb(128, 128, 128);
+    }
+
+#session_confirm_div {
+    display: none;
+}
+#velo_add_div {
+    display: none;
+}
+
+.velo_in { 
+    height: auto;
+    width: 40px;
+    margin-left: 10px;
+}
+.velo_btn {
+    font-weight: bold;
+    font-size: 16px;
+    height: auto;
+    width: 30px;
+}
+
+#data_btn {
+    width: auto;
+    border: none;
+    background: none;
+    font-size: 16px;
+    color: blue;
+    text-decoration: underline;
+    margin: 7px;
+}
+
+#data_reset_btn {
+    display: none;
+}
+
+#chart_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#chart_message {
+    position: absolute;
+    font-size: 25px;
+    color: red;
+}
+
+.toggle {
+    height: auto;
+    }
+    .toggle.red {
+        background-color: red;
+    }
+    .toggle.green {
+        background-color: rgb(0, 255, 0);
+    }
+
+.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-height: 70px;
+    padding: 8px;
+    width: 100%;
+    background: rgb(167, 230, 255);
+    border-bottom: 0.5px solid rgb(128, 128, 128);
+    box-shadow: 2px 0px 3px 1px rgb(128, 128, 128);
+    z-index: 1000;
+}
+.centered {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 5px 16px;
+    }
+    .centered a {
+        flex: 0 0 auto;
+    }
+    .centered .pages {
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 50px;
+    }
+    .centered .button_wrapper {
+        position: absolute;
+        right: 45px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+.main {
+    margin-top: 70px;
+}
+.top h3 {
+    margin: 0px;
+}
+.top h4 {
+    margin: 8px;
+}
+#view_head {
+    font-size: 20px;
+    color: blue;
+}
+.heading:hover {
+    color: rgb(128,128,128);
+    cursor: pointer;
+}
+
+div#edit, div#settings {
+    display: none;
+}
+
+.alert {
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    z-index: 10000;
+    justify-content: center; 
+    align-items: top;
+    }
+    .alert div {
+        max-height: 100px;
+        max-width: 300px;
+        margin-top: 8px;
+
+        padding: 20px; 
+        background: rgb(198, 239, 255);
+        border: 1px solid rgb(128, 128, 128); 
+        border-radius: 6px;
+    }
+
+.section-header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin: 8px;
+    }
+    .section-header::before,
+    .section-header::after {
+        content: "";
+        flex: 1;
+        border-bottom: 1px solid rgb(128, 128, 128);
+        margin: 0 10px;
+    }
+    .section-header span {
+        font-size: 24px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+.dropdown_btn {
+    background: none;
+    border: none;
+    font-weight: normal;
+    margin: none;
+}
+
+.delete_btn {
+    margin: 0;
+    font-weight: bold;
+    height: auto;
+    width: auto;
+}
+
+#desc {
+    text-align: left;
+    } #desc h1 {
+        text-align: center;
+    }
